@@ -1,0 +1,17 @@
+#!/usr/bin/python
+[Unit]
+Description=EdenGreen Greenhouse Monitoring App v0.2
+After=syslog.target
+
+[Service]
+ExecStart=/usr/bin/python /home/daniel/eden.py
+Restart=always
+User=root
+Group=root
+WorkingDirectory=/home/daniel
+StandardOutput=syslog
+StandardError=syslog
+
+
+[Install]
+WantedBy=multi-user.target
